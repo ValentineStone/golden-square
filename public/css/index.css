@@ -1,0 +1,28 @@
+html {
+  --chrome-blue: rgb(77, 144, 254);
+  --dark-blue: rgb(0, 120, 206);
+  --light-blue: rgb(150, 207, 247);
+  --light-gray: rgb(198, 203, 206);
+  --vscode-gray: rgb(30,30,30);
+
+  --default-border: 1px solid var(--light-blue);
+  /* --default-border: 2px outset var(--light-blue); */
+  --default-space: 5px;
+
+  --default-pane-width: 500px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  color: var(--dark-blue);
+  background-color: white;
+
+  overflow: visible;
+}
+
+body {
+  overflow-x: visible;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}

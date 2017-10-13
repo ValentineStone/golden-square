@@ -1,0 +1,63 @@
+<script type="module" src="/js/ce-frameline.js"></script>
+<script type="module" src="/js/ce-window.js"></script>
+<script type="module" src="/js/ce-include.js"></script>
+
+<style>@import url(/css/ce.css);</style>
+<style>@import url(/css/basic.css);</style>
+<style>@import url(/css/index.css);</style>
+<style>
+  #main-navigation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1px;
+    padding: 1px;
+  }
+
+  #root-frameline {
+    display: grid;
+    grid-gap: 3px;
+    grid-auto-columns: max-content;
+    height: calc( 100% - 36px);
+    grid-template-rows: 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 1px;
+    overflow-x: auto;
+  }
+
+  #root-frameline > * {
+    grid-row: 1;
+    margin: auto;
+    max-height: 100%;
+  }
+</style>
+
+<nav id="main-navigation">
+  <input type="button" data-src="clients" value="Clients" />
+  <input type="button" data-src="orders" value="Orders" />
+  <input type="button" data-src="products" value="Products" />
+  <input type="button" data-src="materials" value="Materials" />
+  <input type="button" data-src="reports" value="Reports" />
+</nav>
+
+<ce-frameline id="root-frameline" src="clients.html"></ce-frameline>
+
+<ce-anchor></ce-anchor>
+<script type="module">
+  import anchor from '/js/ce-anchor.js';
+  let root = anchor().parentNode;
+  var frameline = root.querySelector('ce-frameline');
+  var elems = root.querySelectorAll('*[data-src]');
+  for (let elem of elems)
+    elem.addEventListener('click', function (event) {
+      //event.preventDefault();
+      var include = document.createElement('ce-include');
+      include.setAttribute('shadow', 'false');
+      include.src = elem.dataset.src;
+      var window = document.createElement('ce-window');
+      //window.setAttribute('free', 'true');
+      window.title = elem.value;
+      window.appendChild(include);
+      frameline.push(window);
+    });
+</script>

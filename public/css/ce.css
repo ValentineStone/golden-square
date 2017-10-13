@@ -1,0 +1,37 @@
+ce-include {
+  display: block;
+}
+
+ce-frameline {
+  display: block;
+}
+
+ce-frameline > * {
+  display: block;
+}
+
+ce-anchor {
+  display: none;
+}
+
+ce-window {
+  display: block;
+  position: static;
+}
+
+ce-window[free] {
+  position: fixed;
+}
+
+ce-window[free]
+> .ce-window-content {
+  resize: both;
+}
+
+ce-window > .ce-window-handlebar {
+  cursor: default;
+}
+
+ce-window[free] > .ce-window-handlebar {
+  cursor: move;
+}
