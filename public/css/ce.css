@@ -23,7 +23,7 @@ ce-window[free] {
   position: fixed;
 }
 
-ce-window[free]
+ce-window
 > .ce-window-content {
   resize: both;
 }

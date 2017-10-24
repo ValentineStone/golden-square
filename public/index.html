@@ -36,11 +36,8 @@
     max-height: 100%;
   }
 
-  img#froggymarsh {
-    object-fit: none;
-    object-position: 51.6% 35%;
-    width: 330px;
-    height: 330px;
+  ce-window {
+    width: max-content;
   }
 </style>
 
@@ -55,17 +52,18 @@
 </nav>
 
 <ce-frameline id="root-frameline" src="clients.html">
-<ce-window title="Dossier" free>
-  <h1>Froggy Marsh</h1><br/>
-  <img id="froggymarsh" src="/img/froggymarsh.jpg" />
-</ce-window>
 </ce-frameline>
 
 <ce-anchor></ce-anchor>
 <script type="module">
+  import HorizontalScrollManager from '/js/horizontal-scroll-manager.js';
   import anchor from '/js/ce-anchor.js';
   let root = anchor().parentNode;
+
   var frameline = root.querySelector('ce-frameline');
+
+  new HorizontalScrollManager(frameline);
+
   var elems = root.querySelectorAll('*[data-src]');
   for (let elem of elems)
     elem.addEventListener('click', function (event) {

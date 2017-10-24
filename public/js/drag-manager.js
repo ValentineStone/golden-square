@@ -28,12 +28,13 @@ export class DragManager {
       this.offsetX = evt.screenX - rect.left;
       this.offsetY = evt.screenY - rect.top;
       activeClients.add(this);
-      this.tofront();
     });
 
     this.dragbar.addEventListener('mouseup', evt => {
       activeClients.delete(this);
     });
+
+    this.elem.addEventListener('mousedown', this.tofront.bind(this));
   }
 
   drag(evt) {
