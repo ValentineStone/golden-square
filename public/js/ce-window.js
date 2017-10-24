@@ -37,18 +37,20 @@ class CEWindow extends HTMLElement {
   snap() {
     if (this.hasAttribute('free')) {
       this.removeAttribute('free');
-      this.contentElement.style.height = '';
-      this.contentElement.style.width = '';
+      this.style.height = '';
+      this.style.width = '';
     }
-    else
+    else {
       this.setAttribute('free', 'true');
+      this.dragmanager.tofront();
+    }
   }
 
   connectedCallback() {
     if (this.__hasBeenConnected) return;
     this.__hasBeenConnected = true;
     
-    new DragManager(this.handlebarElement, this);
+    this.dragmanager = new DragManager(this.handlebarElement, this);
 
     while (this.childNodes.length > 0) {
       this.contentElement.appendChild(this.childNodes[0]);

@@ -28,7 +28,7 @@ export class DragManager {
       this.offsetX = evt.screenX - rect.left;
       this.offsetY = evt.screenY - rect.top;
       activeClients.add(this);
-        this.elem.style.zIndex = ++zIndexTop;
+      this.tofront();
     });
 
     this.dragbar.addEventListener('mouseup', evt => {
@@ -43,7 +43,9 @@ export class DragManager {
 
   remove() {
     activeClients.remove(this);
-    if (this.elem.dragManager === this)
-      this.dragManager = undefined;
+  }
+
+  tofront() {
+    this.elem.style.zIndex = ++zIndexTop;
   }
 }

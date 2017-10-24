@@ -13,6 +13,10 @@
     padding: 1px;
   }
 
+  #main-navigation > * {
+    background-color: rgba(255,255,255,.9);
+  }
+
   #root-frameline {
     display: grid;
     grid-gap: 3px;
@@ -23,14 +27,24 @@
     max-width: 100%;
     padding: 1px;
     overflow-x: auto;
+    align-items: start;
   }
 
   #root-frameline > * {
     grid-row: 1;
-    margin: auto;
+    margin: 0 auto;
     max-height: 100%;
   }
+
+  img#froggymarsh {
+    object-fit: none;
+    object-position: 51.6% 35%;
+    width: 330px;
+    height: 330px;
+  }
 </style>
+
+<img src="/img/wallpaper_space.jpg" style="object-fit: none; position: fixed; z-index: -1; height: 100%; width: 100%;"/>
 
 <nav id="main-navigation">
   <input type="button" data-src="clients" value="Clients" />
@@ -40,7 +54,12 @@
   <input type="button" data-src="reports" value="Reports" />
 </nav>
 
-<ce-frameline id="root-frameline" src="clients.html"></ce-frameline>
+<ce-frameline id="root-frameline" src="clients.html">
+<ce-window title="Dossier" free>
+  <h1>Froggy Marsh</h1><br/>
+  <img id="froggymarsh" src="/img/froggymarsh.jpg" />
+</ce-window>
+</ce-frameline>
 
 <ce-anchor></ce-anchor>
 <script type="module">

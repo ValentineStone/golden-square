@@ -17,11 +17,11 @@ html {
   color: var(--dark-blue);
   background-color: white;
 
-  overflow: visible;
+  overflow: hidden;
 }
 
 body {
-  overflow-x: visible;
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   border: 0;
