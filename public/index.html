@@ -2,19 +2,18 @@
 <script type="module" src="/js/ce-window.js"></script>
 <script type="module" src="/js/ce-include.js"></script>
 
-<style>@import url(/css/ce.css);</style>
-<style>@import url(/css/basic.css);</style>
-<style>@import url(/css/index.css);</style>
 <style>
+  @import url(/css/ce.css);
+  @import url(/css/basic.css);
   #main-navigation {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr) 34px;
     grid-column-gap: 1px;
     padding: 1px;
   }
 
   #main-navigation > * {
-    background-color: rgba(255,255,255,.9);
+    background-color: var(--transparent-background-color);
   }
 
   #root-frameline {
@@ -35,10 +34,6 @@
     margin: 0 auto;
     max-height: 100%;
   }
-
-  ce-window {
-    width: max-content;
-  }
 </style>
 
 <img src="/img/wallpaper_space.jpg" style="object-fit: none; position: fixed; z-index: -1; height: 100%; width: 100%;"/>
@@ -49,6 +44,7 @@
   <input type="button" data-src="products" value="Products" />
   <input type="button" data-src="materials" value="Materials" />
   <input type="button" data-src="reports" value="Reports" />
+  <button data-src="froggymarsh" style="padding: 0;"><img src="/img/froglogo.png" style="height: 27px;"/></button>
 </nav>
 
 <ce-frameline id="root-frameline" src="clients.html">

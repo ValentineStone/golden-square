@@ -19,13 +19,13 @@ ce-window {
   position: static;
 }
 
-ce-window[free] {
-  position: fixed;
-}
-
 ce-window
 > .ce-window-content {
   resize: both;
+}
+
+ce-window[free] {
+  position: fixed;
 }
 
 ce-window > .ce-window-handlebar {

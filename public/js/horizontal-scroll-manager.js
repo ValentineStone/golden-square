@@ -9,8 +9,9 @@ export default class HorizontalScrollManager {
   }
   
   scrollHorizontally(evt) {
-    var delta = Math.max(-1, Math.min(1, (evt.wheelDelta)));
-    this.elem.scrollLeft -= (delta * this.speed);
-    evt.preventDefault();
+    if (evt.target === this.elem) {
+      var delta = Math.max(-1, Math.min(1, (evt.wheelDelta)));
+      this.elem.scrollLeft -= (delta * this.speed);
+    }
   }
 }

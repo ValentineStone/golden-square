@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -14,16 +12,58 @@
   src: url(/font/Roboto/Roboto-Regular.ttf);
 }
 
+html {
+  --chrome-blue: rgb(77, 144, 254);
+  --dark-blue: rgb(0, 120, 206);
+  --light-blue: rgb(150, 207, 247);
+  --light-gray: rgb(198, 203, 206);
+  --vscode-gray: rgb(30,30,30);
+  
+  --default-main-color: var(--dark-blue);
+  --default-border-color: var(--light-blue);
+  --default-placeholder-color: var(--light-gray);
+  --default-focus-color: var(--chrome-blue);
+  --default-background-color: white;
+  --default-transparent-background-color: rgba(255,255,255, .9);
+  
+  --main-color: var(--default-main-color);
+  --border-color: var(--default-border-color);
+  --placeholder-color: var(--default-placeholder-color);
+  --focus-color: var(--default-focus-color);
+  --background-color: var(--default-background-color);
+  --transparent-background-color: var(--default-transparent-background-color);
+
+
+  --default-border: 1px solid var(--border-color);
+  --default-space: 5px;
+
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  color: var(--main-color);
+  background-color: var(--background-color);
+
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 ::-webkit-input-placeholder {
-  color: var(--light-gray);
+  color: var(--placeholder-color);
 }
 
 :focus {
-  outline: 2px solid var(--chrome-blue);
+  outline: 2px solid var(--focus-color);
   outline-offset: -2px;
 }
 
@@ -44,25 +84,18 @@ input[type=button], button {
 }
 
 input[type=button]:hover, button:hover {
-  border-color: var(--dark-blue);
+  border-color: var(--main-color);
 }
 
 input[type=button]:active, button:active {
-  background-color: var(--dark-blue);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--background-color);
 }
 
 .box {
   display: inline-block;
   border: var(--default-border);
   padding: var(--default-space);
-}
-
-.pane {
-  width: var(--default-pane-width);
-  height: 100%;
-  margin: 0 var(--default-space);
-  overflow: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,9 +122,11 @@ hr {
 
 ce-window {
   border: var(--default-border);
-  background-color: rgba(255,255,255,.9);
+  background-color: var(--transparent-background-color);
   display: grid;
   grid-template-rows: 31px 1fr;
+  width: max-content;
+  
 }
 
 ce-window > .ce-window-handlebar {
@@ -100,7 +135,7 @@ ce-window > .ce-window-handlebar {
   grid-gap: 3px;
   padding: var(--default-space);
   border-bottom: var(--default-border);
-  background-color: white;
+  background-color: var(--background-color);
 }
 
 ce-window
