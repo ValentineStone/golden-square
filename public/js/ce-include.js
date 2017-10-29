@@ -60,7 +60,7 @@ export class CEInclude extends HTMLElement {
             for (let node of currentCache.nodes)
               this.root.appendChild(node);
           else
-            throw new Error(`<include-> load race consdition @${newValue}. src change rejected.`);
+            throw new Error(`<include-> load race condition @${newValue}. src change rejected.`);
         }
         else if (rawCache) {
           currentCache = documentCache[this.cacheKey][newValue] = {
@@ -111,6 +111,7 @@ export class CEInclude extends HTMLElement {
   }
 
   connectedCallback() {
+    console.log(`<ce-include>(${this.__hasBeenConnected}) attached: `, this);
     if (this.__hasBeenConnected) return;
     this.__hasBeenConnected = true;
     if (this.getAttribute('shadow') !== 'false') {
@@ -119,7 +120,7 @@ export class CEInclude extends HTMLElement {
       this.root.appendChild(this.fallbackSlot);
     }    
   }
-  disconnectedCallback() { }
+  disconnectedCallback() { console.trace(`<ce-include>(${this.__hasBeenConnected}) detached: `, this);}
   adoptedCallback(oldDocument, newDocument) { }
 }
 

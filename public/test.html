@@ -1,1 +1,51 @@
-<div style="border: 2px inset; resize: both; overflow: hidden;">Bob</div>
+<style>
+  .gs-form > *,
+  .gs-form div > * {
+    width: 100%;
+  }
+
+  .gs-form textarea {
+    resize: vertical;
+    min-height: 2em;
+  }
+
+  .gs-form label {
+    text-align: right;
+    display: inline-block;
+    margin-bottom: var(--gs-space);
+  }
+
+  .gs-form-split {
+    --gs-form-split-space-width: 1em;
+    overflow: auto;
+    text-align: center;
+    border-bottom: var(--gs-border);
+    line-height: 100%;
+    
+    display: flex;
+    align-items: center;
+  }
+
+  div.gs-form-split > * {
+    border-bottom: none;
+  }
+</style>
+
+<form class="gs-form" autocomplete="off">
+  <h2>Калькулятор багета</h2>
+
+  <input name="frameName" placeholder="Frame name or id..."/>
+  <label>select frame</label>
+
+  <div class="gs-form-split">
+    <input name="x" placeholder="width"/>
+    &#x2715;
+    <input name="y" placeholder="height"/>
+  </div>
+  <label>work size</label>
+
+  <textarea name="data" placeholder="json payload" class="textarea"></textarea>
+  <label>extra data</label>
+
+  <input type="submit" value="Calculate" class="input" />
+</form>

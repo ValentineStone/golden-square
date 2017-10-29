@@ -1,0 +1,14 @@
+html {
+  --gs-main-color: var(--gs-default-main-color);
+  --gs-border-color: var(--gs-default-border-color);
+  --gs-placeholder-color: var(--gs-default-placeholder-color);
+  --gs-focus-color: var(--gs-default-focus-color);
+  --gs-background-color: var(--gs-default-background-color);
+  --gs-transparent-background-color: var(--gs-default-transparent-background-color);
+
+  --gs-border: var(--gs-default-border);
+  --gs-outline: var(--gs-default-outline);
+  --gs-space: var(--gs-default-space);
+
+  --gs-main-font: var(--gs-defualt-main-font);
+}

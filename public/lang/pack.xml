@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <default>en-US</default>
+  <en-US>
+    <bg-menu-clients value="Clients" />
+    <bg-menu-orders value="Orders" />
+    <bg-menu-products value="Products" />
+    <bg-menu-materials value="Materials" />
+    <bg-menu-reports value="Reports" />
+    <bg-str-froggymarsh-name>Froggy Marsh</bg-str-froggymarsh-name>
+  </en-US>
+  <ru>
+    <bg-menu-clients value="Клиенты" />
+    <bg-menu-orders value="Заказы" />
+    <bg-menu-products value="Продукты" />
+    <bg-menu-materials value="Материалы" />
+    <bg-menu-reports value="Отчёты" />
+    <bg-str-froggymarsh-name>Фрогги Марш</bg-str-froggymarsh-name>
+  </ru>
+</root>

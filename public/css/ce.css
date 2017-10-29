@@ -19,8 +19,7 @@ ce-window {
   position: static;
 }
 
-ce-window
-> .ce-window-content {
+ce-window-content {
   resize: both;
 }
 
@@ -28,10 +27,10 @@ ce-window[free] {
   position: fixed;
 }
 
-ce-window > .ce-window-handlebar {
+ce-window-handlebar {
   cursor: default;
 }
 
-ce-window[free] > .ce-window-handlebar {
+ce-window[free] > ce-window-handlebar {
   cursor: move;
 }

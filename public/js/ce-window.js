@@ -8,26 +8,21 @@ class CEWindow extends HTMLElement {
   constructor() {
     super();
 
-    this.handlebarElement = document.createElement('div');
-    this.closeElement = document.createElement('input');
-    this.closeElement.type = 'button';
-    this.closeElement.value = '×';
-    this.snapElement = document.createElement('input');
-    this.snapElement.type = 'button';
-    this.snapElement.value = '~';
-    this.titleElement = document.createElement('span');
-    this.contentElement = document.createElement('div');
+    this.handlebarElement = document.createElement('ce-window-handlebar');
+    this.redElement = document.createElement('ce-window-button');
+    this.yellowElement = document.createElement('ce-window-button');
+    this.greenElement = document.createElement('ce-window-button');
+    this.titleElement = document.createElement('ce-window-title');
+    this.contentElement = document.createElement('ce-window-content');
 
-    this.handlebarElement.className = 'ce-window-handlebar';
-    this.closeElement.className = 'ce-window-button ce-window-close-button';
-    this.snapElement.className = 'ce-window-button ce-window-snap-button';
-    this.titleElement.className = 'ce-window-title';
-    this.contentElement.className = 'ce-window-content';
+    this.redElement.className = 'ce-window-red-button';
+    this.yellowElement.className = 'ce-window-yellow-button';
+    this.greenElement.className = 'ce-window-green-button';
     
-    this.__hasBeenConnected = false;
+    this._hasBeenConnected = false;
 
-    this.closeElement.addEventListener('click', () => this.remove());
-    this.snapElement.addEventListener('click', () => this.snap());
+    this.redElement.addEventListener('click', () => this.remove());
+    this.yellowElement.addEventListener('click', () => this.snap());
 
   }
 
@@ -47,8 +42,8 @@ class CEWindow extends HTMLElement {
   }
 
   connectedCallback() {
-    if (this.__hasBeenConnected) return;
-    this.__hasBeenConnected = true;
+    if (this._hasBeenConnected) return;
+    this._hasBeenConnected = true;
     
     this.dragmanager = new DragManager(this.handlebarElement, this);
 
@@ -56,8 +51,9 @@ class CEWindow extends HTMLElement {
       this.contentElement.appendChild(this.childNodes[0]);
     }
 
-    this.handlebarElement.appendChild(this.closeElement);
-    this.handlebarElement.appendChild(this.snapElement);
+    this.handlebarElement.appendChild(this.redElement);
+    this.handlebarElement.appendChild(this.yellowElement);
+    this.handlebarElement.appendChild(this.greenElement);
     this.handlebarElement.appendChild(this.titleElement);
     this.appendChild(this.handlebarElement);
     this.appendChild(this.contentElement);

@@ -1,0 +1,67 @@
+
+
+ce-window {
+  border-radius: 4px;
+  border: var(--gs-border);
+  background-color: var(--gs-background-color);
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  width: max-content;
+}
+
+ce-window-handlebar {
+  display: flex;
+  align-items: center;
+  padding: var(--gs-space);
+  border-bottom: var(--gs-border);
+  overflow: auto;
+}
+
+ce-window-button {
+  text-align: center;
+  width: calc( 1em + 4px );
+  height: calc( 1em + 4px );
+  border-radius: 50%;
+  border: 2px solid var(--gs-background-color);
+  color: transparent;
+  font-family: 'Material Icons';
+  cursor: pointer;
+}
+
+ce-window-button:hover {
+  color: rgba(0,0,0,0.3);
+}
+
+ce-window-button.ce-window-red-button {
+  background: rgb(255, 94, 83);
+}
+
+ce-window-button.ce-window-red-button::after {
+  content: '\e14c';
+}
+
+ce-window-button.ce-window-yellow-button {
+  background: rgb(254, 191, 2);
+}
+
+ce-window-button.ce-window-yellow-button::after {
+  content: '\e15b';
+}
+
+ce-window-button.ce-window-green-button {
+  background: rgb(14, 206, 69);
+}
+
+ce-window-button.ce-window-green-button::after {
+  content: '\e145';
+}
+
+ce-window-title {
+  padding-left: var(--gs-space);
+}
+
+ce-window-content {
+  overflow: auto;
+  padding: var(--gs-space);
+  padding-top: 0;
+}

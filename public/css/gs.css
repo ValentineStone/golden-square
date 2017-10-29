@@ -1,0 +1,146 @@
+@import url(/css/gs-theme-default.css);
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(/font/OpenSans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(/font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url(/font/MaterialIcons-Regular.ttf);
+}
+
+html {
+
+  /* default gs values */
+  --gs-chrome-blue: rgb(77, 144, 254);
+  --gs-dark-blue: rgb(0, 120, 206);
+  --gs-light-blue: rgb(150, 207, 247);
+  --gs-light-gray: rgb(198, 203, 206);
+  --gs-vscode-gray: rgb(30,30,30);
+
+  --gs-default-main-color: var(--gs-dark-blue);
+  --gs-default-border-color: var(--gs-light-blue);
+  --gs-default-placeholder-color: var(--gs-light-gray);
+  --gs-default-focus-color: var(--gs-chrome-blue);
+  --gs-default-background-color: white;
+  --gs-default-transparent-background-color: rgba(255,255,255, .9);
+
+  --gs-default-border: 1px solid var(--gs-border-color);
+  --gs-default-outline: 2px solid var(--gs-focus-color);
+  --gs-default-space: 5px;
+
+  --gs-defualt-main-font: 16px 'Open Sans', sans-serif;
+
+
+  /* default gs theme */
+  --gs-main-color: var(--gs-default-main-color);
+  --gs-border-color: var(--gs-default-border-color);
+  --gs-placeholder-color: var(--gs-default-placeholder-color);
+  --gs-focus-color: var(--gs-default-focus-color);
+  --gs-background-color: var(--gs-default-background-color);
+  --gs-transparent-background-color: var(--gs-default-transparent-background-color);
+
+  --gs-border: var(--gs-default-border);
+  --gs-outline: var(--gs-default-outline);
+  --gs-space: var(--gs-default-space);
+
+  --gs-main-font: var(--gs-defualt-main-font);
+
+
+  color: var(--gs-main-color);
+  background-color: var(--gs-background-color);
+  font: var(--gs-main-font);
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: var(--gs-placeholder-color);
+}
+
+:focus {
+  outline: var(--gs-outline);
+  outline-offset: -2px;
+}
+
+input,
+select,
+textarea,
+button {
+  -webkit-appearance: none;
+  border: none;
+  padding: var(--gs-space);
+  font: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+input,
+select {
+  border-bottom: var(--gs-border);
+}
+
+textarea,
+button,
+input[type=button],
+input[type=submit] {
+  border: var(--gs-border);
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+button:hover {
+  border-color: var(--gs-main-color);
+}
+
+input[type=button]:active,
+input[type=submit]:active,
+button:active {
+  background-color: var(--gs-main-color);
+  color: var(--gs-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 0;
+}
+
+hr {
+  width: 100%;
+  border-top: var(--gs-border);
+  margin: var(--gs-space) 0;
+}
+
+form {
+  margin: 0;
+}
+
+.gs-box {
+  /*display: inline-block;*/
+  border: var(--gs-border);
+  padding: var(--gs-space);
+}
+
+.gs-burst {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
